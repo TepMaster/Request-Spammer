@@ -10,7 +10,6 @@ from stem.control import Controller
 # -*- coding: utf-8 -*-
 clear = lambda: os.system('cls')
 
-data = {"your-name": "tdp", "your-email": "David2020@gmail.com", "your-message": "1"}
 
 
 def logo():
