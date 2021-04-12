@@ -3,7 +3,7 @@ Request-Spammer is a tool that send alot of GET/POST reqest with data to an spec
 
 
 ## Example
-![image](docs/img/Recovering_prototype_latest.png)
+![image](docs/image.png)
 
 ## Installation
 * Clone the repo:
@@ -15,18 +15,15 @@ cd Depix
 ```sh
 python -m pip install -r requirements.txt
 ```
-* Run Depix:
+* Run Request-Spammer:
 ```python
 python main.py
 ```
 
 ## Example usage
 
-* Depixelize example image created with Notepad and pixelized with Greenshot. Greenshot averages by averaging the gamma-encoded 0-255 values, which is Depix's default mode.
-```
-python3 depix.py -p images/testimages/testimage3_pixels.png -s images/searchimages/debruinseq_notepad_Windows10_closeAndSpaced.png
-```
-Result: ![image](docs/img/example_output_multiword.png)
+Run the app select your request type target URL data and the number of time the request will be sent and press enter
+Example: ![image](docs/img/example_output_multiword.png)
 
 * Depixelize example image created with Sublime and pixelized with Gimp, where averaging is done in linear sRGB. The backgroundcolor option filters out the background color of the editor.
 ```
@@ -42,27 +39,16 @@ Result: ![image](docs/img/output_depixelizedExample_linear.png)
 * Move that screenshot into a folder like `images/searchimages/`.
 * Run Depix with the `-s` flag set to the location of this screenshot.
 
-### Algorithm
-The algorithm uses the fact that the linear box filter processes every block separately. For every block it pixelizes all blocks in the search image to check for direct matches.
-
-For most pixelized images Depix manages to find single-match results. It assumes these are correct. The matches of surrounding multi-match blocks are then compared to be geometrically at the same distance as in the pixelized image. Matches are also treated as correct. This process is repeated a couple of times.
-
-After correct blocks have no more geometrical matches, it will output all correct blocks directly. For multi-match blocks, it outputs the average of all matches.
-The algorithm uses the fact that the linear box filter processes every block separately. For every block it pixelizes all blocks in the search image to check for direct matches. 
-
 ### Known limitations
 
-* The algorithm matches by integer block-boundaries. As a result, it has the underlying assumption that for all characters rendered (both in the de Brujin sequence and the pixelated image), the text positioning is done at pixel level. However, some modern text rasterizers position text [at sub-pixel accuracies](http://agg.sourceforge.net/antigrain.com/research/font_rasterization/).
-* ~~The algorithm currently performs pixel averaging in the image's gamma-corrected RGB space. As a result, it cannot reconstruct images pixelated using linear RGB.~~
+* The speed is limited by your internet connection and the setting use. An average internet connection the program send 20-30 request per second it can be future increases to 50-100/s but is Captcha is present the speed is limited by the Captcha solver provider
+
+
 
 ### Future development
 
-* Implement more filter functions
-
-Create more averaging filters that work like some popular editors do.
-
-* Create a new tool that utilizes HMMs
-
-After creating this program, someone pointed me to a research document from 2016 where a group of researchers managed to create a similar tool. Their tool has better precision and works across many different fonts. However, their code is not public. I encourage anyone passionate about this type of depixalization to implement their HMM-based version and share it:
-
-https://www.researchgate.net/publication/305423573_On_the_Ineffectiveness_of_Mosaicing_and_Blurring_as_Tools_for_Document_Redaction
+* Add Captcha Support via RuCaptcha
+* Tor 
+* Random Name/Email/Phone
+* Changeable Browser Agents
+* Make a executable verison
