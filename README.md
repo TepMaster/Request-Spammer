@@ -9,7 +9,7 @@ Request-Spammer is a tool that send alot of GET/POST reqest with data to an spec
 * Clone the repo:
 ```sh
 git clone https://github.com/TepMaster/Request-Spammer
-cd Depix
+cd Request-Spammer
 ```
 * Install the dependencies:
 ```sh
@@ -23,21 +23,11 @@ python main.py
 ## Example usage
 
 Run the app select your request type target URL data and the number of time the request will be sent and press enter
-Example: ![image](docs/img/example_output_multiword.png)
+![image](docs/example.png)
 
-* Depixelize example image created with Sublime and pixelized with Gimp, where averaging is done in linear sRGB. The backgroundcolor option filters out the background color of the editor.
-```
-python3 depix.py -p images/testimages/sublime_screenshot_pixels_gimp.png -s images/searchimages/debruin_sublime_Linux_small.png --backgroundcolor 40,41,35 --averagetype linear
-```
-Result: ![image](docs/img/output_depixelizedExample_linear.png)
-
+To make a config file use option 3 and for running the script from the config file use option 2 and specify the number of time to request needs to be sent
 ## About
-### Making a Search Image
-* Cut out the pixelated blocks from the screenshot as a single rectangle.
-* Paste a [De Bruijn sequence](https://en.wikipedia.org/wiki/De_Bruijn_sequence) with expected characters in an editor with the same font settings as your input image (Same text size, similar font, same colors).
-* Make a screenshot of the sequence.
-* Move that screenshot into a folder like `images/searchimages/`.
-* Run Depix with the `-s` flag set to the location of this screenshot.
+
 
 ### Known limitations
 
