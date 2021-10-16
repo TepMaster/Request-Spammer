@@ -13,11 +13,11 @@ cd Request-Spammer
 ```
 * Install the dependencies:
 ```sh
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 * Run Request-Spammer:
 ```python
-python main.py
+python3 main.py
 ```
 
 ## Example usage
